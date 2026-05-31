@@ -64,6 +64,26 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* Free Book highlight */}
+      <section className="relative overflow-hidden bg-ink text-bone">
+        <div className="png-texture absolute inset-0" aria-hidden="true" />
+        <div className="shell relative flex flex-col items-center gap-6 py-14 text-center sm:flex-row sm:justify-between sm:text-left">
+          <div className="max-w-2xl">
+            <span className="eyebrow text-gold">Free Book</span>
+            <h2 className="mt-3 font-display text-2xl font-extrabold sm:text-3xl">
+              Download Atomic Schools PNG — free
+            </h2>
+            <p className="mt-3 text-bone/70">
+              A practical school-transformation framework for Papua New Guinean
+              schools. Small Habits. Big Future.
+            </p>
+          </div>
+          <Link href="/atomic-schools-png-book" className="btn-gold shrink-0">
+            Get the Free Book
+          </Link>
+        </div>
+      </section>
+
       {/* 4. Featured Projects */}
       <Section
         eyebrow="In Motion"

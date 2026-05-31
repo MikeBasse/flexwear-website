@@ -13,6 +13,12 @@ export const divisionsNav: NavItem[] = [
   { label: "Atomic Digital PNG", href: "/atomic-digital-png" },
 ];
 
+// Standalone link to the free book landing page (featured in nav + footer)
+export const freeBook: NavItem = {
+  label: "Free Book: Atomic Schools PNG",
+  href: "/atomic-schools-png-book",
+};
+
 export const mainNav: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },

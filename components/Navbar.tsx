@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Logo from "./Logo";
-import { mainNav, divisionsNav } from "@/data/navigation";
+import { mainNav, divisionsNav, freeBook } from "@/data/navigation";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -101,6 +101,12 @@ export default function Navbar() {
                         {child.label}
                       </Link>
                     ))}
+                    <Link
+                      href={freeBook.href}
+                      className="mt-1 block rounded-xl bg-ink px-4 py-2.5 text-sm font-semibold text-gold transition-colors hover:bg-ink-soft"
+                    >
+                      {freeBook.label}
+                    </Link>
                   </div>
                 </div>
               </li>
@@ -205,6 +211,12 @@ export default function Navbar() {
                             {child.label}
                           </Link>
                         ))}
+                        <Link
+                          href={freeBook.href}
+                          className="py-2 text-base font-semibold text-blood"
+                        >
+                          {freeBook.label}
+                        </Link>
                       </div>
                     </div>
                   </li>
