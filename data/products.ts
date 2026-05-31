@@ -5,11 +5,33 @@ export type Product = {
   price: string; // placeholder pricing
   blurb: string;
   division: string;
+  href?: string; // if set, the card links to a real page (e.g. a book)
+  badge?: string; // optional small label, e.g. "Free" or "New"
 };
 
 export const productCategories = ["All", "Apparel", "Books & Planners"] as const;
 
 export const products: Product[] = [
+  {
+    slug: "atomic-teacher-png-book",
+    name: "Atomic Teacher PNG (Book)",
+    category: "Books & Planners",
+    price: "K49",
+    blurb: "Teacher productivity, classroom routines, and educational leadership. Free preview available.",
+    division: "Atomic Teacher PNG",
+    href: "/atomic-teacher-png-book",
+    badge: "New",
+  },
+  {
+    slug: "atomic-schools-png-book",
+    name: "Atomic Schools PNG (Book)",
+    category: "Books & Planners",
+    price: "Free",
+    blurb: "Practical school-transformation framework. Free PDF download.",
+    division: "Atomic Schools PNG",
+    href: "/atomic-schools-png-book",
+    badge: "Free",
+  },
   {
     slug: "leadership-hoodie",
     name: "Leadership Hoodie",

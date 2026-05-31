@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Product } from "@/data/products";
 
 export default function ProductCard({ product }: { product: Product }) {
@@ -14,6 +15,11 @@ export default function ProductCard({ product }: { product: Product }) {
         <span className="absolute left-3 top-3 rounded-full bg-ink/85 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-wide text-bone">
           {product.category}
         </span>
+        {product.badge && (
+          <span className="absolute right-3 top-3 rounded-full bg-gold px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-wide text-ink">
+            {product.badge}
+          </span>
+        )}
       </div>
       <div className="flex flex-1 flex-col p-5">
         <h3 className="font-display text-lg font-bold text-ink">{product.name}</h3>
@@ -24,15 +30,27 @@ export default function ProductCard({ product }: { product: Product }) {
         <div className="mt-5 flex items-center justify-between">
           <span className="font-display text-lg font-bold text-ink">
             {product.price}
-            <span className="ml-1 text-xs font-normal text-ink/40">PGK</span>
+            {product.price !== "Free" && (
+              <span className="ml-1 text-xs font-normal text-ink/40">PGK</span>
+            )}
           </span>
-          <button
-            type="button"
-            className="btn-ink !px-4 !py-2 text-xs"
-            aria-label={`Enquire about ${product.name}`}
-          >
-            Enquire
-          </button>
+          {product.href ? (
+            <Link
+              href={product.href}
+              className="btn-ink !px-4 !py-2 text-xs"
+              aria-label={`View ${product.name}`}
+            >
+              View
+            </Link>
+          ) : (
+            <Link
+              href="/contact"
+              className="btn-ink !px-4 !py-2 text-xs"
+              aria-label={`Enquire about ${product.name}`}
+            >
+              Enquire
+            </Link>
+          )}
         </div>
       </div>
     </article>
