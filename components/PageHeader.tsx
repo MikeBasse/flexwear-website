@@ -23,16 +23,28 @@ export default function PageHeader({
         aria-hidden="true"
       />
       <div className="shell relative pb-16 pt-32 sm:pb-20 sm:pt-40">
-        {eyebrow && <span className="eyebrow text-gold">{eyebrow}</span>}
-        <h1 className="mt-5 max-w-4xl font-display text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl">
+        {eyebrow && (
+          <span className="eyebrow animate-fade-up text-gold">{eyebrow}</span>
+        )}
+        <h1
+          className="mt-5 max-w-4xl animate-fade-up font-display text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl"
+          style={{ animationDelay: "80ms" }}
+        >
           {title}
         </h1>
         {intro && (
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-bone/70 text-pretty">
+          <p
+            className="mt-6 max-w-2xl animate-fade-up text-lg leading-relaxed text-bone/70 text-pretty"
+            style={{ animationDelay: "160ms" }}
+          >
             {intro}
           </p>
         )}
-        {children && <div className="mt-8">{children}</div>}
+        {children && (
+          <div className="mt-8 animate-fade-up" style={{ animationDelay: "240ms" }}>
+            {children}
+          </div>
+        )}
       </div>
       <div
         className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold to-transparent"

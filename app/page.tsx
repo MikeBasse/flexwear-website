@@ -1,6 +1,7 @@
 import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
 import Section from "@/components/Section";
+import Reveal from "@/components/Reveal";
 import DivisionCard from "@/components/DivisionCard";
 import ProjectCard from "@/components/ProjectCard";
 import ProductCard from "@/components/ProductCard";
@@ -34,8 +35,10 @@ export default function HomePage() {
       >
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {ecosystemRoles.map((role, i) => (
-            <div
+            <Reveal
               key={role}
+              index={i}
+              variant="scale"
               className="rounded-2xl border border-ink/10 bg-white p-5 shadow-card"
             >
               <span className="font-display text-3xl font-extrabold text-gold">
@@ -44,7 +47,7 @@ export default function HomePage() {
               <p className="mt-3 text-sm font-medium leading-snug text-ink/75">
                 {role}
               </p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Section>
@@ -58,8 +61,10 @@ export default function HomePage() {
         className="bg-bone-deep/40"
       >
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {divisions.map((d) => (
-            <DivisionCard key={d.slug} division={d} />
+          {divisions.map((d, i) => (
+            <Reveal key={d.slug} index={i}>
+              <DivisionCard division={d} />
+            </Reveal>
           ))}
         </div>
       </Section>
@@ -91,8 +96,10 @@ export default function HomePage() {
         intro="Honest about where we are: these initiatives are in active development and planning."
       >
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p) => (
-            <ProjectCard key={p.slug} project={p} />
+          {projects.map((p, i) => (
+            <Reveal key={p.slug} index={i}>
+              <ProjectCard project={p} />
+            </Reveal>
           ))}
         </div>
         <div className="mt-10">
@@ -110,8 +117,10 @@ export default function HomePage() {
         className="bg-bone-deep/40"
       >
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {apparelShowcase.map((p) => (
-            <ProductCard key={p.slug} product={p} />
+          {apparelShowcase.map((p, i) => (
+            <Reveal key={p.slug} index={i}>
+              <ProductCard product={p} />
+            </Reveal>
           ))}
         </div>
         <div className="mt-10 flex flex-wrap gap-3">

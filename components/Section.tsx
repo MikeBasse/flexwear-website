@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import Reveal from "./Reveal";
 
 export default function Section({
   children,
@@ -26,7 +27,7 @@ export default function Section({
     >
       <div className="shell">
         {(eyebrow || title || intro) && (
-          <div className={`mb-12 max-w-2xl ${center ? "mx-auto text-center" : ""}`}>
+          <Reveal className={`mb-12 max-w-2xl ${center ? "mx-auto text-center" : ""}`}>
             {eyebrow && (
               <span className={`eyebrow ${dark ? "text-gold" : "text-blood"}`}>
                 {eyebrow}
@@ -50,7 +51,7 @@ export default function Section({
                 {intro}
               </p>
             )}
-          </div>
+          </Reveal>
         )}
         {children}
       </div>
