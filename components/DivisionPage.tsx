@@ -1,6 +1,5 @@
-import PageHeader from "@/components/PageHeader";
+﻿import PageHeader from "@/components/PageHeader";
 import Section from "@/components/Section";
-import Reveal from "@/components/Reveal";
 import CTASection from "@/components/CTASection";
 import type { Division } from "@/data/divisions";
 
@@ -8,7 +7,7 @@ export default function DivisionPage({ division }: { division: Division }) {
   return (
     <>
       <PageHeader
-        eyebrow={`Division · ${division.short}`}
+        eyebrow={`Division \u00B7 ${division.short}`}
         title={division.name}
         intro={division.tagline}
       />
@@ -21,15 +20,15 @@ export default function DivisionPage({ division }: { division: Division }) {
         className="bg-bone-deep/40"
       >
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {division.focusAreas.map((f, i) => (
-            <Reveal key={f.title} index={i % 3} className="card p-6">
+          {division.focusAreas.map((f) => (
+            <div key={f.title} className="card p-6">
               <h3 className="font-display text-lg font-bold text-ink">
                 {f.title}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-ink/65">
                 {f.body}
               </p>
-            </Reveal>
+            </div>
           ))}
         </div>
       </Section>
