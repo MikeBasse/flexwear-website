@@ -4,21 +4,20 @@ import { useEffect, useRef, useState, ReactNode, ElementType } from "react";
 
 type RevealProps = {
   children: ReactNode;
-  /** Animation style. Default rises up; others slide or scale in. */
   variant?: "up" | "fade" | "left" | "right" | "scale";
-  /** Stagger index — multiplies an 80ms delay so grids cascade. */
   index?: number;
-  /** Render as a different element (e.g. "li", "section"). Default "div". */
   as?: ElementType;
   className?: string;
-  /** Re-animate every time it enters the viewport (default: once). */
   repeat?: boolean;
 };
 
 /**
- * Lightweight scroll-reveal wrapper. Adds `.is-visible` when the element
- * scrolls into view; the actual motion is defined in globals.css and is
- * automatically disabled for users who prefer reduced motion.
+ * Fail-safe scroll-reveal wrapper.
+ *
+ * IMPORTANT: content is VISIBLE by default. The hide-then-reveal animation is
+ * only ever applied after JS has confirmed IntersectionObserver works and has
+ * "armed" the element. If JS doesn't run or the observer never fires, content
+ * is never left invisible.
  */
 export default function Reveal({
   children,
@@ -29,17 +28,32 @@ export default function Reveal({
   repeat = false,
 }: RevealProps) {
   const ref = useRef<HTMLElement | null>(null);
+  const [armed, setArmed] = useState(false);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
 
-    // If IntersectionObserver is unavailable, just show the content.
-    if (typeof IntersectionObserver === "undefined") {
+    if (typeof IntersectionObserver === "undefined") return;
+
+    const prefersReduced =
+      typeof window !== "undefined" &&
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) return;
+
+    const rect = el.getBoundingClientRect();
+    const inViewOnMount =
+      rect.top < (window.innerHeight || document.documentElement.clientHeight);
+
+    if (inViewOnMount) {
+      setArmed(true);
       setVisible(true);
       return;
     }
+
+    setArmed(true);
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -56,7 +70,13 @@ export default function Reveal({
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
+
+    const failSafe = window.setTimeout(() => setVisible(true), 1200);
+
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(failSafe);
+    };
   }, [repeat]);
 
   const dataVal = variant === "up" ? "" : variant;
@@ -64,9 +84,9 @@ export default function Reveal({
   return (
     <Tag
       ref={ref as never}
-      data-reveal={dataVal}
-      className={`${visible ? "is-visible" : ""} ${className}`}
-      style={{ ["--reveal-index" as string]: index }}
+      data-reveal={armed ? dataVal || "up" : undefined}
+      className={`${armed && visible ? "is-visible" : ""} ${className}`}
+      style={armed ? ({ ["--reveal-index" as string]: index } as object) : undefined}
     >
       {children}
     </Tag>
