@@ -7,6 +7,7 @@ export type Product = {
   division: string;
   href?: string; // if set, the card links to a real page (e.g. a book)
   badge?: string; // optional small label, e.g. "Free" or "New"
+  image?: string; // optional photo, e.g. "/images/products/leadership-hoodie.jpg"
 };
 
 export const productCategories = ["All", "Apparel", "Books & Planners"] as const;
@@ -36,25 +37,28 @@ export const products: Product[] = [
     slug: "leadership-hoodie",
     name: "Leadership Hoodie",
     category: "Apparel",
-    price: "K—",
+    price: "K150",
     blurb: "Premium hoodie carrying the Atomic leadership identity.",
     division: "FlexWear Apparel",
+    image: "/images/products/leadership-hoodie.jpg",
   },
   {
     slug: "teacher-polo",
     name: "Teacher Polo",
     category: "Apparel",
-    price: "K—",
+    price: "K90",
     blurb: "Smart, durable polo that presents teachers professionally.",
     division: "Atomic Teacher PNG",
+    image: "/images/products/teacher-polo.jpg",
   },
   {
     slug: "student-motivation-shirt",
     name: "Student Motivation Shirt",
     category: "Apparel",
-    price: "K—",
+    price: "K50",
     blurb: "Motivational shirt to inspire students and build school pride.",
     division: "Atomic Schools PNG",
+    image: "/images/products/student-motivation-shirt.jpg",
   },
   {
     slug: "atomic-schools-workbook",
