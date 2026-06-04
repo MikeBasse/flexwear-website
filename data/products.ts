@@ -15,6 +15,17 @@ export const productCategories = ["All", "Books & Planners", "Apparel"] as const
 export const products: Product[] = [
   // --- Books people can get right now ---
   {
+    slug: "atomic-schools-png-workbook",
+    name: "Atomic Schools PNG Workbook",
+    category: "Books & Planners",
+    price: "K120",
+    blurb: "Complete school-transformation workbook: 31 chapters, a 90-day program, and printable templates. Free preview available.",
+    division: "Atomic Schools PNG",
+    href: "/atomic-schools-png-workbook",
+    badge: "New",
+    image: "/books/atomic-schools-png-workbook-cover.png",
+  },
+  {
     slug: "atomic-schools-png-book",
     name: "Atomic Schools PNG (Book)",
     category: "Books & Planners",
@@ -67,15 +78,6 @@ export const products: Product[] = [
   },
 
   // --- Planners & workbooks (coming soon) ---
-  {
-    slug: "atomic-schools-workbook",
-    name: "Atomic Schools Workbook",
-    category: "Books & Planners",
-    price: "K—",
-    blurb: "Workbook of systems and habits for the PNG classroom.",
-    division: "Atomic Schools PNG",
-    badge: "Coming Soon",
-  },
   {
     slug: "teacher-productivity-planner",
     name: "Teacher Productivity Planner",
