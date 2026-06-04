@@ -16,7 +16,7 @@ export default function ShopPage() {
       <PageHeader
         eyebrow="Shop"
         title="The FlexWear Shop"
-        intro="Apparel, books, and planners from across the ecosystem. Pricing shown is placeholder while the store is being prepared."
+        intro="Books, apparel, and planners from across the ecosystem. Order apparel and books by enquiry — online checkout is coming soon."
       />
 
       <section className="py-16 sm:py-20">
@@ -45,11 +45,12 @@ export default function ShopPage() {
           </div>
 
           <p className="mt-12 rounded-2xl border border-ink/10 bg-bone-deep/50 p-6 text-sm text-ink/60">
-            <strong className="font-semibold text-ink">Store coming soon.</strong>{" "}
-            Online checkout and live pricing are being prepared. In the meantime,
-            use the <span className="font-medium">Enquire</span> button or the
-            contact page to request items and pricing. The product grid is built
-            to connect to an ecommerce backend in future.
+            <strong className="font-semibold text-ink">How to order.</strong>{" "}
+            Online checkout is being prepared. For now, tap{" "}
+            <span className="font-medium">View</span> on a book to read or order
+            it, or <span className="font-medium">Enquire</span> on apparel to
+            request sizes, pricing, and delivery. We&apos;ll arrange everything
+            with you directly.
           </p>
         </div>
       </section>

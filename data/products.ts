@@ -10,19 +10,10 @@ export type Product = {
   image?: string; // optional photo, e.g. "/images/products/leadership-hoodie.jpg"
 };
 
-export const productCategories = ["All", "Apparel", "Books & Planners"] as const;
+export const productCategories = ["All", "Books & Planners", "Apparel"] as const;
 
 export const products: Product[] = [
-  {
-    slug: "atomic-teacher-png-book",
-    name: "Atomic Teacher PNG (Book)",
-    category: "Books & Planners",
-    price: "K49",
-    blurb: "Teacher productivity, classroom routines, and educational leadership. Free preview available.",
-    division: "Atomic Teacher PNG",
-    href: "/atomic-teacher-png-book",
-    badge: "New",
-  },
+  // --- Books people can get right now ---
   {
     slug: "atomic-schools-png-book",
     name: "Atomic Schools PNG (Book)",
@@ -33,6 +24,18 @@ export const products: Product[] = [
     href: "/atomic-schools-png-book",
     badge: "Free",
   },
+  {
+    slug: "atomic-teacher-png-book",
+    name: "Atomic Teacher PNG (Book)",
+    category: "Books & Planners",
+    price: "K49",
+    blurb: "Teacher productivity, classroom routines, and educational leadership. Free preview available.",
+    division: "Atomic Teacher PNG",
+    href: "/atomic-teacher-png-book",
+    badge: "New",
+  },
+
+  // --- Apparel ---
   {
     slug: "leadership-hoodie",
     name: "Leadership Hoodie",
@@ -60,6 +63,8 @@ export const products: Product[] = [
     division: "Atomic Schools PNG",
     image: "/images/products/student-motivation-shirt.jpg",
   },
+
+  // --- Planners & workbooks (coming soon) ---
   {
     slug: "atomic-schools-workbook",
     name: "Atomic Schools Workbook",
@@ -67,6 +72,7 @@ export const products: Product[] = [
     price: "K—",
     blurb: "Workbook of systems and habits for the PNG classroom.",
     division: "Atomic Schools PNG",
+    badge: "Coming Soon",
   },
   {
     slug: "teacher-productivity-planner",
@@ -75,6 +81,7 @@ export const products: Product[] = [
     price: "K—",
     blurb: "Weekly planning system that brings order to a teacher's week.",
     division: "Atomic Teacher PNG",
+    badge: "Coming Soon",
   },
   {
     slug: "youth-leadership-journal",
@@ -83,5 +90,6 @@ export const products: Product[] = [
     price: "K—",
     blurb: "Journal for building discipline, leadership, and personal growth.",
     division: "Atomic Youth PNG",
+    badge: "Coming Soon",
   },
 ];
