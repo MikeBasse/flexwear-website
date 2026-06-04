@@ -23,6 +23,7 @@ export const products: Product[] = [
     division: "Atomic Schools PNG",
     href: "/atomic-schools-png-book",
     badge: "Free",
+    image: "/books/atomic-schools-png-cover.png",
   },
   {
     slug: "atomic-teacher-png-book",
@@ -33,6 +34,7 @@ export const products: Product[] = [
     division: "Atomic Teacher PNG",
     href: "/atomic-teacher-png-book",
     badge: "New",
+    image: "/books/atomic-teacher-png-cover.png",
   },
 
   // --- Apparel ---
