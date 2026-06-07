@@ -47,6 +47,17 @@ export const products: Product[] = [
     badge: "New",
     image: "/books/atomic-teacher-png-cover.png",
   },
+  {
+    slug: "atomic-teacher-png-planner",
+    name: "Atomic Teacher PNG Planner",
+    category: "Books & Planners",
+    price: "K79",
+    blurb: "Complete teacher productivity planner: yearly-to-daily planning, classroom systems, wellbeing tools & printable trackers. Free preview available.",
+    division: "Atomic Teacher PNG",
+    href: "/atomic-teacher-png-planner",
+    badge: "New",
+    image: "/books/atomic-teacher-png-planner-cover.png",
+  },
 
   // --- Apparel ---
   {
@@ -78,15 +89,6 @@ export const products: Product[] = [
   },
 
   // --- Planners & workbooks (coming soon) ---
-  {
-    slug: "teacher-productivity-planner",
-    name: "Teacher Productivity Planner",
-    category: "Books & Planners",
-    price: "K—",
-    blurb: "Weekly planning system that brings order to a teacher's week.",
-    division: "Atomic Teacher PNG",
-    badge: "Coming Soon",
-  },
   {
     slug: "youth-leadership-journal",
     name: "Youth Leadership Journal",
