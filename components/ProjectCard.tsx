@@ -1,6 +1,7 @@
 import type { Project, ProjectStatus } from "@/data/projects";
 
 const statusStyle: Record<ProjectStatus, string> = {
+  "Available": "bg-emerald-500/12 text-emerald-700 border-emerald-500/30",
   "In Development": "bg-gold/15 text-gold-bright border-gold/30",
   "Pilot Ready": "bg-blood/10 text-blood border-blood/30",
   "Coming Soon": "bg-ink/5 text-ink/55 border-ink/15",

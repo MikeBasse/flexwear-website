@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
 import Section from "@/components/Section";
 import DivisionCard from "@/components/DivisionCard";
@@ -26,10 +26,11 @@ export default function HomePage() {
     <>
       <HeroSection />
 
+      {/* 2. Company Introduction */}
       <Section
         eyebrow="Who We Are"
         title="One ecosystem, built for Papua New Guinea"
-        intro={`${site.name} brings together apparel, education, leadership, innovation, and digital systems under a single institutional vision \u2014 turning consistent, well-designed systems into lasting transformation.`}
+        intro={`${site.name} brings together apparel, education, leadership, innovation, and digital systems under a single institutional vision — turning consistent, well-designed systems into lasting transformation.`}
       >
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {ecosystemRoles.map((role, i) => (
@@ -48,11 +49,12 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* 3. Divisions */}
       <Section
         id="divisions"
         eyebrow="The Ecosystem"
         title="Our Divisions"
-        intro="Six divisions, one master brand. Each strengthens the others \u2014 apparel funds and brands education; education and leadership build talent; technology scales reach; community impact builds trust."
+        intro="Six divisions, one master brand. Each strengthens the others — apparel funds and brands education; education and leadership build talent; technology scales reach; community impact builds trust."
         className="bg-bone-deep/40"
       >
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -62,13 +64,14 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* Free Book highlight */}
       <section className="relative overflow-hidden bg-ink text-bone">
         <div className="png-texture absolute inset-0" aria-hidden="true" />
         <div className="shell relative flex flex-col items-center gap-6 py-14 text-center sm:flex-row sm:justify-between sm:text-left">
           <div className="max-w-2xl">
             <span className="eyebrow text-gold">Free Book</span>
             <h2 className="mt-3 font-display text-2xl font-extrabold sm:text-3xl">
-              Download Atomic Schools PNG \u2014 free
+              Download Atomic Schools PNG — free
             </h2>
             <p className="mt-3 text-bone/70">
               A practical school-transformation framework for Papua New Guinean
@@ -81,10 +84,11 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 4. Featured Projects */}
       <Section
         eyebrow="In Motion"
         title="Featured Projects"
-        intro="Honest about where we are: these initiatives are in active development and planning."
+        intro="Our growing ecosystem — from products available now to what's coming next."
       >
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((p) => (
@@ -98,6 +102,7 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* 5. Apparel Showcase */}
       <Section
         eyebrow="FlexWear Apparel"
         title="Identity you can wear"
@@ -119,8 +124,10 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* 6. Impact / Stats */}
       <StatsSection />
 
+      {/* 7. Call To Action */}
       <CTASection
         title="Join the movement to build better systems for Papua New Guinea"
         intro="Whether you are a school, a business, an NGO, or a community organisation, there is a place for you in this ecosystem."
