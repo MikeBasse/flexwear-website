@@ -58,6 +58,17 @@ export const products: Product[] = [
     badge: "New",
     image: "/books/atomic-teacher-png-planner-cover.png",
   },
+  {
+    slug: "atomic-youth-png-journal",
+    name: "Atomic Youth PNG Journal",
+    category: "Books & Planners",
+    price: "K79",
+    blurb: "Complete youth leadership guide & 90-day journal: 50 chapters, the Atomic Youth Systems & printable trackers. Free preview available.",
+    division: "Atomic Youth PNG",
+    href: "/atomic-youth-png-journal",
+    badge: "New",
+    image: "/books/atomic-youth-png-journal-cover.png",
+  },
 
   // --- Apparel ---
   {
@@ -86,16 +97,5 @@ export const products: Product[] = [
     blurb: "Motivational shirt to inspire students and build school pride.",
     division: "Atomic Schools PNG",
     image: "/images/products/student-motivation-shirt.jpg",
-  },
-
-  // --- Planners & workbooks (coming soon) ---
-  {
-    slug: "youth-leadership-journal",
-    name: "Youth Leadership Journal",
-    category: "Books & Planners",
-    price: "K—",
-    blurb: "Journal for building discipline, leadership, and personal growth.",
-    division: "Atomic Youth PNG",
-    badge: "Coming Soon",
   },
 ];
