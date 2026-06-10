@@ -4,10 +4,10 @@ import { site, socials } from "@/data/site";
 import { divisionsNav } from "@/data/navigation";
 
 const quickLinks = [
-  { label: "About", href: "/about" },
+  { label: "Atomic Digital Systems", href: "/atomic-digital-png" },
+  { label: "Start Your Journey", href: "/start" },
   { label: "Projects", href: "/projects" },
-  { label: "Shop", href: "/shop" },
-  { label: "Media", href: "/media" },
+  { label: "Books", href: "/books" },
   { label: "Partnerships", href: "/partnerships" },
   { label: "Contact", href: "/contact" },
 ];
@@ -113,8 +113,8 @@ export default function Footer() {
           <p>
             © {year} {site.name}. All rights reserved.
           </p>
-          <p className="text-bone/40">
-            {site.tagline}
+          <p className="text-gold/70">
+            Atomic Digital Systems is currently under development.
           </p>
         </div>
       </div>

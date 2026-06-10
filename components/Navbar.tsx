@@ -126,6 +126,11 @@ export default function Navbar() {
             )
           )}
           <li>
+            <Link href="/start" className="text-sm font-semibold text-blood transition-colors hover:text-blood/80">
+              Start Your Journey
+            </Link>
+          </li>
+          <li>
             <Link href="/partnerships" className="btn-gold !px-5 !py-2.5">
               Partner With Us
             </Link>
@@ -232,7 +237,10 @@ export default function Navbar() {
                 )
               )}
             </ul>
-            <Link href="/partnerships" className="btn-gold mt-6 w-full">
+            <Link href="/start" className="btn-ghost mt-6 w-full">
+              Start Your Journey
+            </Link>
+            <Link href="/partnerships" className="btn-gold mt-3 w-full">
               Partner With Us
             </Link>
           </div>

@@ -74,11 +74,11 @@ export default function AtomicDigitalSystemsPage() {
             for PNG.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="btn-gold">
-              Register Your Interest
+            <a href="#roadmap" className="btn-gold">
+              Explore the Roadmap
             </a>
-            <Link href="/partnerships" className="btn-ghost-light">
-              Partner With Us
+            <Link href="/start" className="btn-ghost-light">
+              Start Your Atomic Journey
             </Link>
           </div>
         </div>
@@ -109,6 +109,7 @@ export default function AtomicDigitalSystemsPage() {
         title="Four phases, built honestly and in order"
         intro="We are building this step by step. Each phase lays the foundation for the next. We will not claim a system is live until it is."
         className="bg-bone-deep/40"
+        id="roadmap"
       >
         <div className="grid gap-6 lg:grid-cols-2">
           {roadmapPhases.map((phase) => (
@@ -207,12 +208,44 @@ export default function AtomicDigitalSystemsPage() {
         </div>
       </Section>
 
+      {/* Atomic AI Vision */}
+      <Section
+        eyebrow="The Atomic AI Vision"
+        title="AI assistants for every part of the ecosystem"
+        intro="A future module of the platform. These tools are not built yet — they describe where Atomic AI is headed."
+        className="bg-bone-deep/40"
+      >
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            { name: "Teacher AI", body: "Lesson planning, classroom systems and productivity support." },
+            { name: "Student AI", body: "Study support, goal tracking and leadership coaching." },
+            { name: "School AI", body: "School improvement recommendations and reporting support." },
+            { name: "Community AI", body: "Community development planning and project support." },
+            { name: "SME AI", body: "Business systems, customer service and growth support." },
+            { name: "Governance AI", body: "Parliament, district development and civic education analysis." },
+          ].map((m) => (
+            <div key={m.name} className="rounded-2xl border border-ink/10 bg-white p-6 shadow-card">
+              <div className="flex items-center justify-between gap-2">
+                <h3 className="font-display text-lg font-bold text-ink">{m.name}</h3>
+                <span className="rounded-full border border-ink/15 bg-ink/5 px-2.5 py-0.5 text-[0.62rem] font-semibold uppercase tracking-wide text-ink/45">
+                  Future
+                </span>
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-ink/65">{m.body}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-center text-sm font-semibold uppercase tracking-wide text-ink/40">
+          Future Development
+        </p>
+      </Section>
+
       <CTASection
-        title="Help us build Papua New Guinea's learning platform"
-        intro="We're looking for schools, partners, and sponsors to help bring Atomic Digital Systems to life. If you share the vision, let's talk."
+        title="Ready to build better systems?"
+        intro="Partner with Atomic PNG Institute or register your interest in the Atomic Digital Systems roadmap."
         buttons={[
-          { label: "Explore Partnerships", href: "/partnerships", variant: "gold" },
-          { label: "Contact Us", href: "/contact", variant: "ghost" },
+          { label: "Start Your Atomic Journey", href: "/start", variant: "gold" },
+          { label: "Partner With Us", href: "/partnerships", variant: "ghost" },
         ]}
       />
     </>
