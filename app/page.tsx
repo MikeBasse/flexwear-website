@@ -91,9 +91,20 @@ export default function HomePage() {
         intro="Our growing ecosystem — from products available now to what's coming next."
       >
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p) => (
-            <ProjectCard key={p.slug} project={p} />
-          ))}
+          {projects
+            .filter((p) =>
+              [
+                "atomic-schools-png",
+                "atomic-teacher-png",
+                "atomic-youth-png",
+                "atomic-digital-systems",
+                "atomic-communities-png",
+                "atomic-governance-png",
+              ].includes(p.slug)
+            )
+            .map((p) => (
+              <ProjectCard key={p.slug} project={p} />
+            ))}
         </div>
         <div className="mt-10">
           <Link href="/projects" className="btn-ghost">

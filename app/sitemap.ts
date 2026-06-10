@@ -17,6 +17,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/atomic-youth-png-journal",
     "/atomic-digital-png",
     "/shop",
+    "/books",
+    "/start",
     "/projects",
     "/media",
     "/partnerships",
